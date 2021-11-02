@@ -1,1 +1,1 @@
-# exerciciosBandTec
+# exerciciosTreino
