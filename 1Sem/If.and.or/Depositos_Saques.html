@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex9</title>
+</head>
+<body>
+    <h1 id="titulo">Valor guardado no cofrinho: R$0.00</h1>
+    Quantidade de depósitos feitos: <b id="sp_deposito">0</b>. Quantidade de retiradas feitas: <b id="sp_retirada">0</b>. <br>
+    Valor que deseja depositar: <input id="input_deposito"><br><br>
+    <button onclick="depositar()">Depositar</button> <button onclick="retirar()">Tirar toda a grana</button> <br>
+</body>
+</html>
+<script>
+var cofrinho = 0;
+var qtd_deposito = 0
+var qtd_retirada = 0
+function depositar(){
+    qtd_deposito++;
+    var deposito = Number(input_deposito.value);
+    cofrinho = cofrinho + deposito;
+
+    titulo.innerHTML = `
+    Valor guardado no cofrinho: R$${cofrinho.toFixed(2)}
+    `
+    sp_deposito.innerHTML = `${qtd_deposito}`;
+}
+
+function retirar() {
+    qtd_retirada++;
+    titulo.innerHTML = `
+    Valor guardado no cofrinho: R$0.00
+    `
+    sp_retirada.innerHTML = `${qtd_retirada}`;
+}
+</script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apoena</title>
+    <link rel="icon" href="logoApoena.png" />
+  </head>
+  <body>
+    <div style="background-color: #037f8c">
+      <div style="margin-left: 30px">
+        
+        <br />
+        <b style="color: white">Faça uma simulação e veja o quanto você pode ganhar com nossos serviços:</b>
+        <br>
+        <br>
+        <b style="color: white; font-size: 13px">QUANTO VOCÊ PRODUZ POR ANO?</b
+        ><br />
+        <input
+          id="qtd"
+          style="
+            background-color: #014040;
+            border-radius: 30px;
+            color: white;
+            border: none;
+          "
+          type="number"
+        />
+        <select
+          style="
+            background-color: #014040;
+            border-radius: 30px;
+            color: white;
+            border: none;
+            padding-left: 5px;
+          "
+          type="number"
+        >
+          <option value="none"></option>
+          <option value="cx">CX</option>
+          <option value="kg">Kg</option>
+          <option value="g">g</option>
+          <option value="mg">mg</option>
+          <option value="l">l</option>
+          <option value="t">t</option>
+        </select>
+        <br />
+        <br />
+        <b style="color: white; font-size: 13px">QUAL SEU LUCRO ANUAL?</b><br />
+        <input
+          id="lucroanual"
+          style="
+            background-color: #014040;
+            border-radius: 30px;
+            color: white;
+            border: none;
+            padding-left: 5px;
+          "
+          type="number"
+        />
+        <br />
+        <br />
+        <button
+          onclick="Calculo()"
+          style="
+            background-color: #031727;
+            color: white;
+            border-radius: 30px;
+            border: none;
+            width: 80px;
+            font-size: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+          "
+        >
+          CALCULAR
+        </button>
+      </div>
+      <br />
+      <div id="resultado" style="background-color: #037f8c;margin-left: 30px"></div>
+    </div>
+
+    <script>
+      function Calculo() {
+        var producao = qtd.value;
+        var anual = lucroanual.value;
+        var perdaskg = producao * 0.3;
+        var perdas = anual * 0.3;
+        var apoena = anual * 0.1;
+        var lucro = perdas - apoena + Number(anual);
+
+        resultado.innerHTML = `<span style = "color:white;font-size: 13px">
+        Cerca de ${perdaskg.toFixed(2)}kg de produto estragam durante o transporte devido ao mau controle de temperatura. Por isso, você deixa de ganhar R$ ${perdas.toFixed(2)}.<br>
+        Com nosso produto você pode lucrar até R$ ${lucro.toFixed(2)} mantendo a mesma produção! </span><br><br>  
+        `;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota</title>
+</head>
+<body>
+    Qual nota você dá para o atendimento? <input  id="in_nota"><br>
+    <button onclick="avaliar()">Avaliar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        if (in_nota.value < 0 || in_nota.value > 5){
+            alert("Nota inválida. Digite de 0 a 5.")
+        } else {
+            if (in_nota.value == 0){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png">
+                `
+            }
+            else if (in_nota.value == 0.5){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela meia cheia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png">
+                `
+            }
+             else if (in_nota.value == 1){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png">
+                `
+            } 
+            else if (in_nota.value == 1.5){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela meia cheia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png">
+                `
+            } else if (in_nota.value == 2){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png">
+                `
+            } else if (in_nota.value == 2.5){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela meia cheia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png">
+                `
+            } else if (in_nota.value == 3){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela vazia.png"><img src= "./estrela vazia.png">
+                `
+            } else if (in_nota.value == 3.5){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela meia cheia.png"><img src= "./estrela vazia.png">
+                `
+            } else if (in_nota.value == 4){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela vazia.png">
+                `
+            } else if (in_nota.value == 4.5){
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela meia cheia.png">
+                `
+            } else {
+                div_resultado.innerHTML = `     
+                <img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png"><img src= "./estrela cheia.png">
+                `
+            }       
+        }
+    }
+</script>

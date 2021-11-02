@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex8</title>
+</head>
+<body>
+    Escolha um número entre 0 e 200: <input id="in_num"><br>
+    <button onclick="calcular()">Viva o 7!</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    if (in_num.value < 0 || in_num.value > 200){
+        alert("Número inválido")
+    }else {
+        var contador = 0;
+        var max = in_num.value;
+        function calcular(){   
+        var max = in_num.value;
+            while (contador < max){
+                if (contador % 7 == 0){
+                contador = contador + 7;
+                div_resultado.innerHTML += `${contador} <br>`;
+                }
+            }
+        }    
+    }
+    
+</script>

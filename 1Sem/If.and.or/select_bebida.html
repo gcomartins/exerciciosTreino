@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍔🧇🥩🥙</title>
+</head>
+<body>
+    <h1>Faça seu pedido</h1>
+    Nome: <input id ="input_nome"> <br>
+    Selecione a bebida:
+    <select id="select_bebida">
+        <option value="bebida_invalida">-</option>
+        <option value="4">Água</option>
+        <option value="5">Refrigerante</option>
+        <option value="7">Cerveja</option>
+    </select>
+    <br>
+    Selecione sua refeição:
+    <select id="select_refeicao">
+        <option value="refeicao_invalida">-</option>
+        <option value="15">Salada</option>
+        <option value="40">Feijoada</option>
+        <option value="30">Bife a Cavalo</option>
+        <option value="25">Peixe frito</option>
+    </select>
+    <br>
+    <button onclick="calcular()">Calcular valor</button>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+    var nome = input_nome.value;
+    var bebida = Number(select_bebida.value);
+    var comida = Number(select_refeicao.value);
+    var preco = (bebida + comida).toFixed(2);
+    
+    div_resultado.innerHTML = `
+    Olá ${nome}! <br>
+    Seu almoço vai custar R$${preco}
+    
+    `
+}
+</script>

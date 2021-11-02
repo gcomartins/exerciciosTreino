@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador</title>
+</head>
+<body>
+    <h1>Simule quanto você pode ganhar com nosso produto</h1>
+    Quanto você produz por ano? (em kg) <input id="input_prod_anual"> <br><br>
+    Quanto você vende por ano? (em R$) <input id="input_vendas_anual"> <br><br>
+    <button onclick = "simulacao()">Simule</button> <br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function simulacao(){
+    var prod_total = Number(input_prod_anual.value);
+    var lucro_sem = Number(input_vendas_anual.value);
+    var lucro_com = lucro_sem/0.7;
+    var prod_real = prod_total * 0.7;
+
+    div_resultado.innerHTML = `
+    Você produz atualmente <b>${(prod_total).toFixed(2)} kg</b> de produto e lucra <b>R$${(lucro_sem).toFixed(2)}</b> com isso. Cerca de <b style = "color: red;">${(prod_total - prod_real).toFixed(2)} kg</b> de produto estragam durante o transporte por causa de mau controle de temperatura 😭 (cerca de 30%). Por causa disso você deixa de ganhar <b style = "color: red;">R$${(lucro_com - lucro_sem).toFixed(2)}</b>. <br>
+    Com nosso produto você pode lucrar até <b style = "color: green;">R$${(lucro_com).toFixed(2)}</b> mantendo essa mesma produção! 😎😎
+    
+    
+    
+    `
+
+    }
+</script>

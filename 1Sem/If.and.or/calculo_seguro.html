@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 2 IF</title>
+</head>
+<body>
+    Quantidade de infrações que você cometeu: <input id="input_infracoes"><br>
+    Valor do carro: <input id="input_carro"><br>
+    <button onclick="calcular()">Calcular Seguro</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var infracoes = Number(input_infracoes.value);
+        var carro = Number(input_carro.value);
+        var seguro = carro * 0.015;
+        if (infracoes < 3) {
+            seguro = seguro * 0.9;
+        }
+        div_resultado.innerHTML = `
+        Você precisa pagar R$${seguro} de seguro.
+        `
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aux Emergencial</title>
+</head>
+<body>
+    Renda: <input id="input_renda"><br>
+    Renda familiar: <input id="input_renda_familiar"><br>
+    <button onclick="verificar()">Verificar ajuda</button>
+</body>
+</html>
+<script>
+    function verificar(){
+        var renda = input_renda.value;
+        var familia = input_renda_familiar.value;
+        if (renda < 1050 && familia < 2100){
+            alert("Você terá direito!")
+        } else {
+            alert("Você não terá direito!")
+        }
+    }
+</script>

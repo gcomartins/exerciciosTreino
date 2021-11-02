@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 12</title>
+</head>
+<body>
+    <div id="div_grande">
+        <div style = "width: 50%; float: left" id="div_esq"><button onclick="iniciar()">Iniciar Jogo</button></div>
+        <div style = "width: 50%; float: right;" id="div_dir"></div>
+    </div>
+</body>
+</html>
+<script>
+    var click_a = 0;
+    var click_b = 0;
+    var porcent_a = 100;
+    var porcent_b = 100;
+
+    function iniciar(){
+        div_esq.innerHTML = `
+            <img style= "width: 53.5rem;" onclick = "hit_a()" src="https://www.einerd.com.br/wp-content/uploads/2019/02/megalobox-je.jpg" alt=""><br>
+            <div style = "background-color: green; height: 70px"></div><br>
+            Golpes sofridos pelo lutador: <b id="golpes_a()">0</b>
+        `
+        div_dir.innerHTML = `
+            <img style= "width: 50rem;" onclick = "hit_b()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUoIA7kw9w2WfhH_MUE5GN-KRoH-RSSR_eHA&usqp=CAU" alt="">
+            <div style = "background-color: red; height: 70px"></div>
+            Golpes sofridos pelo lutador: <b id="golpes_b">0</b>
+        `
+    }
+
+    function hit_a(){
+        click_a++
+        porcent_a = porcent_a - 5;
+        div_esq.innerHTML = `
+            <img style= "width: 53.5rem;" onclick = "hit_a()" src="https://www.einerd.com.br/wp-content/uploads/2019/02/megalobox-je.jpg" alt=""><br>
+            <div style = "background-color: green;width: ${porcent_a}%; height: 70px"></div><br>
+            Golpes sofridos pelo lutador: <b id="golpes_a()">${click_a}</b>
+        `
+    }
+
+    function hit_b(){
+        click_b++
+        porcent_b = porcent_b - 5;
+        div_dir.innerHTML = `
+            <img style= "width: 50rem;" onclick = "hit_b()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUoIA7kw9w2WfhH_MUE5GN-KRoH-RSSR_eHA&usqp=CAU" alt=""><br>
+            <div style = "background-color: red; width: ${porcent_b}%; height: 70px"></div><br>
+            Golpes sofridos pelo lutador: <b id="golpes_a()">${click_b}</b>
+        `
+    }
+</script>

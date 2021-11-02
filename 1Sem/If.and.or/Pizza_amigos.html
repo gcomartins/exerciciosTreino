@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza com amigos</title>
+</head>
+<body>
+    Qual o valor da Pizza?:<input id="input_pizza"><br>
+    Quantos amigos vão comer?:<input id="input_amigos"><br>
+    Quanto cada um consegue pagar?: <input id="input_max"><br>
+    <button onclick="analisar()">Vai rolar?</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var pizza = Number(input_pizza.value);
+        var amigos = Number(input_amigos.value);
+        var max = Number(input_max.value);
+        var valorAmigo = pizza/amigos;
+
+        if (valorAmigo>max){
+            div_resultado.innerHTML = `
+            Cada um deve pagar R$${(valorAmigo).toFixed(2)}. <br>
+            Puts! Não vai rolar😥😥
+            `
+        } else {
+            div_resultado.innerHTML = `
+            Cada um deve pagar R$${(valorAmigo).toFixed(2)}. <br>
+            Uhu! Vamos pedir pizza!😎😎
+            `
+        }
+    }
+</script>

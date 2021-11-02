@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações Matemáticas🪒🪒</title>
+</head>
+<body>
+    <h1>Calcule seu IMC</h1>
+    Informe o peso:<input id="input_peso"><br>
+    Informe sua altura:<input id="input_altura"><br>
+    <button onclick="calcular()">Calcular</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var peso = Number(input_peso.value);
+        var altura = Number(input_altura.value);
+        var imc = peso / (altura * altura);
+        div_resultado.innerHTML = `
+        <h2>Seu IMC é de ${(imc).toFixed(2)} kg/m².</h2> <br>
+        🙄Magreza, quando o resultado é menor que 18,5 kg/m2; <br>
+        😐Normal, quando o resultado está entre 18,5 e 24,9 kg/m2; <br>
+        😣Sobrepeso, quando o resultado está entre 24,9 e 30 kg/m2; <br>
+        😥Obesidade, quando o resultado é maior que 30 kg/m2.
+        `
+
+    }
+</script>

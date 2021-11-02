@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C😎RREÇÃ😎</title>
+</head>
+<body>
+    <div>
+
+        <div style="float: left; width: 50%;">
+    
+            <img style="width: 300px;"; src="https://www.melhorinfra.com.br/wp-content/uploads/2020/02/titerceirizar-500x250.jpg" alt=""> <br>
+    
+            Nome da equipe:<input id="equipe_1_nome" type="text"> <br>
+            Nome do projeto:<input id="equipe_1_projeto" type="text"><br>
+            Duração do projeto (em dias):<input id="equipe_1_duracao_projeto" type="text"> <br>
+            Custo do projeto:<input id="equipe_1_custo_total" type="text"> <br>
+            Quantidade de horas do projeto:<input id="equipe_1_qtd_horas_projeto" type="text"> <br>
+              
+        </div>
+    
+        <div style="float: right; width: 50%;">
+    
+            <img style="width: 300px;"; src="https://blog.vinco.com.br/wp-content/uploads/2020/01/310816-bianca-entrega-ate-1110-capacitacao-em-ti-x-motivos-para-capacitar-sua-equipe.jpg" alt=""> <br>
+    
+            Nome da equipe:<input id="equipe_2_nome" type="text"> <br>
+            Nome do projeto:<input id="equipe_2_projeto" type="text"><br>
+            Duração do projeto (em dias):<input id="equipe_2_duracao_projeto" type="text"> <br>
+            Custo do projeto:<input id="equipe_2_custo_total" type="text"> <br>
+            Quantidade de horas do projeto:<input id="equipe_2_qtd_horas_projeto" type="text"> <br>
+        
+        </div>
+
+    </div>
+
+    Custo por hora referência de mercado: <input id="custo_hora_referencia" type="text"> <br>
+    <button onclick="analisar_projetos()">Analisar os Projetos</button>
+
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+<script>
+
+function analisar_projetos(){
+
+    var A = equipe_1_nome.value;
+    var B = equipe_1_projeto.value;
+    var C = equipe_1_qtd_horas_projeto.value;
+    var D = equipe_1_custo_total.value;
+    var E = equipe_1_duracao_projeto.value;
+    
+    var G = C/E;
+    var H = F / Y * 100;
+
+    var K = equipe_2_nome.value;
+    var L = equipe_2_projeto.value;
+    var M = equipe_2_qtd_horas_projeto.value;
+    var N = equipe_2_custo_total.value;
+    var O = equipe_2_duracao_projeto.value;
+    
+    var Q = M/O;
+
+    var F = D / C;
+    var P = N / M;
+
+    var X = F / P * 100;
+
+    var Y = custo_hora_referencia.value;
+    var R = P / Y * 100;
+
+    div_resultado.innerHTML = `
+    <h3>Análise de Tempo</h3>
+    
+    O projeto ${B} foi desenvolvido em ${C} horas num período de ${E} dias, portanto a equipe ${A} trabalhou em média ${G} horas por dia nesse projeto.
+    <br>
+    O projeto ${L} foi desenvolvido em ${M} horas num período de ${O} dias, portanto a equipe ${K} trabalhou em média ${Q} horas por dia nesse projeto.
+    <br>
+
+    <h3>Análise de Custos</h3>
+
+    A equipe ${A} desenvolveu o projeto ${B} em ${C} horas a um custo de R$ ${D}, portanto o custo por hora desse projeto é de R$ ${F}
+    <br>
+    A equipe ${K} desenvolveu o projeto ${L} em ${M} horas a um custo de R$ ${N}, portanto o custo por hora desse projeto é de R$ ${P}
+    <br>
+    Observe que o custo por hora do projeto B é ${X}% do custo por hora do projeto ${L}.
+    <br>
+
+    <h3>Análise de Referência</h3>
+
+    O projeto ${B} com custo por hora de R$ ${F} é ${H}% em relação a referência de mercado ${Y}
+    <br>
+    O projeto ${L} com custo por hora de R$ ${P} é ${R}% em relação a referência de mercado ${Y}
+    `
+}
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analise Atacante</title>
+</head>
+<body>
+    Quantas partidas ele jogou?:<input id="input_partidas"><br>
+    Quantos gols ele marcou?:<input id="input_gols"><br>
+    <button onclick="estudar()">Estudar Jogador</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function estudar(){
+    var partidas = Number(input_partidas.value);
+    var gols = Number(input_gols.value);
+    var media = gols / partidas;
+
+    if(media>0.6){
+        div_resultado.innerHTML = `
+        <h1>Atacante de Futuro!</h1><br>
+        <img src="">
+        `
+    }else {
+        if (media<0.2){
+            div_resultado.innerHTML = `
+        <h1>Melhor mudar de posição!</h1><br>
+        <img src="">
+        `
+        }else {
+            div_resultado.innerHTML = `
+        <h1>Atacante Mediano!</h1><br>
+        <img src="">
+        `
+        }
+    }
+    }
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex8</title>
+</head>
+<body>
+    <button onclick="calcular8()">8 passagens</button>
+    <button onclick="calcular20()">20 passagens</button>
+    <button onclick="calcular50()">50 passagens</button> <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+function calcular8(){
+    var $passagem = 4.40;
+    var $desconto = 4.06;
+    var passagens = 8;
+    var relacao =1 - $desconto/$passagem;
+    var bonus = (($passagem*passagens)-($desconto*passagens))/4.40;
+
+    div_resultado.innerHTML = `
+    Ao comprar ${passagens} passagens, você pagou ${(relacao*100).toFixed(2)}% a menos. É como se tivesse ganhado ${(bonus).toFixed(2)} passagens de bônus
+    `
+}
+
+function calcular20(){
+    var $passagem = 4.40;
+    var $desconto = 3.93;
+    var passagens = 8;
+    var relacao =1 - $desconto/$passagem;
+    var bonus = (($passagem*passagens)-($desconto*passagens))/4.40;
+
+    div_resultado.innerHTML = `
+    Ao comprar ${passagens} passagens, você pagou ${(relacao*100).toFixed(2)}% a menos. É como se tivesse ganhado ${(bonus).toFixed(2)} passagens de bônus
+    `
+}
+
+function calcular50(){
+    var $passagem = 4.40;
+    var $desconto = 3.83;
+    var passagens = 8;
+    var relacao =1 - $desconto/$passagem;
+    var bonus = (($passagem*passagens)-($desconto*passagens))/4.40;
+
+    div_resultado.innerHTML = `
+    Ao comprar ${passagens} passagens, você pagou ${(relacao*100).toFixed(2)}% a menos. É como se tivesse ganhado ${(bonus).toFixed(2)} passagens de bônus
+    `
+}
+</script>

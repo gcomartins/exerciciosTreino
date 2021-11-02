@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxilio Emergencial</title>
+</head>
+<body>
+    Renda: <input id="input_renda"><br>
+    Renda familiar: <input id="input_renda_familiar"><br>
+    <button onclick="verificar()">Terei o benefício?</button>
+</body>
+</html>
+<script>
+    function verificar(){
+        if (input_renda.value <= 2000 || input_renda_familiar.value <= 3000){
+            alert("Você terá direito ao auxílio!")
+        } else {
+            alert("Você não terá direito ao auxílio!")
+        }
+    }
+</script>

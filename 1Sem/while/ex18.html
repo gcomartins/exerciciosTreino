@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex18</title>
+</head>
+<body>
+    Quantos ônibus você precisa pegar? <input id="in_onibus"><br>
+    Quantos trens você precisa pegar? <input id="in_trens"><br>
+    Quantos metrôs você precisa pegar? <input id="in_metro"><br>
+    <button onclick="calcular()">#PartiuTrajeto</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var cont1 = 0;
+        var cont2 = 0;
+        var cont3 = 0;
+        var onibus = in_onibus.value;
+        var trens = in_trens.value;
+        var metro = in_metro.value;
+        var total = onibus + trens + metro;
+        if (cont1 == 0){
+            cont1++;
+            div_resultado.innerHTML += `Pegando o ${cont1}º buzão <br>`   
+            
+        }if(cont1 == 1){
+            cont1++;
+            div_resultado.innerHTML += `Pegando o ${cont1}º buzão. Começando a Cansar <br>`
+            
+        }if(cont1 > 1) {
+            while (cont1 < onibus ){
+            cont1++;
+            div_resultado.innerHTML += `Pegando o ${cont1}º buzão. Já cansado! <br>`
+            }
+        }
+        
+        if (cont2 == 0){
+            cont2++;
+            div_resultado.innerHTML += `Pegando o ${cont2}º trem <br>`   
+            
+        }if(cont2 == 1){
+            cont2++;
+            div_resultado.innerHTML += `Pegando o ${cont2}º trem. Começando a Cansar <br>`
+            
+        }if(cont2 > 1) {
+            while (cont2 < trens ){
+            cont2++;
+            div_resultado.innerHTML += `Pegando o ${cont2}º trem. Já cansado! <br>`
+            }
+        }
+
+        if (cont3 == 0){
+            cont3++;
+            div_resultado.innerHTML += `Pegando o ${cont3}º metrô <br>`   
+            
+        }if(cont3 == 1){
+            cont3++;
+            div_resultado.innerHTML += `Pegando o ${cont3}º metrô. Começando a Cansar <br>`
+            
+        }if(cont3 > 1) {
+            while (cont3 < metro ){
+            cont3++;
+            div_resultado.innerHTML += `Pegando o ${cont3}º metrô. Já cansado! <br>`
+            }
+        }
+    }
+</script>

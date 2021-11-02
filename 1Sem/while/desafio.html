@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    URL da imagem: <input id="in_url"><br>
+    Quantas imagens exibir: <input id="in_qtd"><br>
+    Quantas imagens por linha: <input id="in_linha"><br>
+    <button onclick="gerar()">Gerar imagens</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function gerar(){
+        div_resultado.innerHTML = "";
+        var url = in_url.value;
+        var qtd = in_qtd.value;
+        var linha = in_linha.value;
+        contador = 0;
+        while (contador < qtd){
+            if (contador % linha == 0){
+                div_resultado.innerHTML += ` <br> `
+            }
+            contador++;
+            div_resultado.innerHTML += `<img src="${url}" style="width: ${100/(linha)}%">`
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pode brincar?</title>
+</head>
+<body>
+    Idade: <input type="text" id="input_idade"><br>
+    Peso: <input type="text" id="input_peso"><br>
+    <button onclick="pode_brincar()">Pode brincar?</button><br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var idade = input_idade.value;
+    var peso = Number(input_peso.value);
+    function pode_brincar(){
+        if (idade >= 15 && peso <= 100){
+           div_resultado.innerHTML = `
+            <span style = "color: blue;">Pode brincar!!!</span>
+            `
+        } else {
+            div_resultado.innerHTML = `
+            <span style = "color: red;">Não pode brincar!!!</span>
+            `
+        }
+    }
+</script>

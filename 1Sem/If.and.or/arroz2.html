@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arroz</title>
+</head>
+<body>
+    Tipo de arroz utilizado: <select id="select">
+        <option value="ind">-</option>
+        <option value="1">Arroz branco</option>
+        <option value="2">Arroz integral</option>
+    </select><br>
+    Tempo de cozimento(minutos): <input type="text" id="in_tempo"><br>
+    Quantidade de sal usada(gramas): <input type="text" id="in_gramas"><br>
+    <button onclick="avaliar()">Avaliar arroz</button><br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        var arroz_perfeito = false;
+        if ((select.value == 1 && in_tempo.value == 10 && in_gramas.value == 10) || (select.value == 2 && in_tempo.value == 20 && in_gramas.value == 15)){
+            div_resultado.innerHTML = `
+            Seu arroz está perfeito! <br>
+            `
+            arroz_perfeito = true;
+        } else {
+            div_resultado.innerHTML = `
+            Seu arroz não está perfeito! <br>
+            <img style="width: 50%" src= "https://noticiasdatv.uol.com.br/media/_versions/erick-jacquin-freezer-bronca-pesadelo-na-cozinha-reproducao-band-min_fixed_large.jpg">
+            `
+        } 
+        
+        if (arroz_perfeito && select.value == 1) {
+            div_resultado.innerHTML += `
+            <img style="width: 50%" src= "https://vivareceita-cdn.s3.amazonaws.com/uploads/2020/11/Aprenda-como-fazer-um-arroz-dos-deuses.-Fonte-Pinterest.jpg">
+            `
+        } else if (arroz_perfeito && select.value == 2){
+            div_resultado.innerHTML += `
+            <img style="width: 50%" src= "https://img.itdg.com.br/tdg/images/recipes/000/160/283/116758/116758_original.jpg?mode=crop&width=710&height=400">
+            `
+        }
+    }
+</script>

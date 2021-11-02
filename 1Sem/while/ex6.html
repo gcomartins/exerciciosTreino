@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6</title>
+</head>
+<body>
+    Qual pessoa você mais ama?: <input id="in_pessoa"><br>
+    Quanto você ama essa pessoa?: <input id="in_amor"><br>
+    <button onclick="calcular()">Calcular Amor</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var contador = 0;
+    function calcular(){
+    var pessoa = in_pessoa.value;
+    var amor = in_amor.value;
+    while (contador < amor){
+        contador++
+        div_resultado.innerHTML += `${contador}. ${pessoa}, eu te amo! Sempre lembre disso!<br>`
+    }
+    }
+</script>

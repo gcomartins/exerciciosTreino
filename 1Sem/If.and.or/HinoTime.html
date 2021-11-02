@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veja o Hino do seu Time</title>
+</head>
+<body>
+    Qual time você torce? <select onchange="ver_hino()" id="select_time">
+        <option value="">--</option>
+        <option value="sao_paulo">São Paulo</option>
+        <option value="corinthians">Corinthians</option>
+        <option value="palmeiras">Palmeiras</option>
+        <option value="santos">Santos</option>
+    </select> <br>
+    <div id="div_hino"></div>
+</body>
+</html>
+<script>
+    function ver_hino(){
+        var hino = select_time.value;
+        if (hino == "sao_paulo") {
+            div_hino.innerHTML = `
+            Salve tricolor paulista!
+            `
+            div_hino.style.backgroundColor = "black"
+            div_hino.style.color = "red"
+        } else if (hino == "palmeiras") {
+            div_hino.innerHTML = `
+            Salve tricolor paulista!
+            `
+            div_hino.style.backgroundColor = "black"
+            div_hino.style.color = "red"
+        }  else if (hino == "santos") {
+            div_hino.innerHTML = `
+            Salve tricolor paulista!
+            `
+            div_hino.style.backgroundColor = "black"
+            div_hino.style.color = "red"
+        }  else if (hino == "corinthians") {
+            div_hino.innerHTML = `
+            Salve tricolor paulista!
+            `
+            div_hino.style.backgroundColor = "black"
+            div_hino.style.color = "red"
+        }  else if (hino == "") {
+            div_hino.innerHTML = `
+            Salve tricolor paulista!
+            `
+            div_hino.style.backgroundColor = "black"
+            div_hino.style.color = "red"
+        }
+    }
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <button onclick="nota10()">Nota 10</button>
+    <button onclick="nota8()">Nota 8</button>
+    <button onclick="nota6()">Nota 6</button>
+    <button onclick="nota4()">Nota 4</button>
+    <button onclick="nota2()">Nota 2</button>
+    <button onclick="reset()">Reset</button> <br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var dividendo = 0;
+    var divisor = 0;
+    var media = 0;
+    function nota10(){
+        dividendo = Number(dividendo) + 10;
+        divisor = divisor + 1;
+        var media = dividendo / divisor;
+        div_resultado.innerHTML = `
+        Sua avaliaçao: <b>${(media).toFixed(2)}</b>
+        `
+    }
+    function nota8(){
+        dividendo = Number(dividendo) + 8;
+        divisor = divisor + 1;
+        var media = dividendo / divisor;
+        div_resultado.innerHTML = `
+        Sua avaliaçao: <b>${(media).toFixed(2)}</b>
+        `
+    }
+    function nota6(){
+        dividendo = Number(dividendo) + 6;
+        divisor = divisor + 1;
+        var media = dividendo / divisor;
+        div_resultado.innerHTML = `
+        Sua avaliaçao: <b>${(media).toFixed(2)}</b>
+        `
+    }
+    function nota4(){
+        dividendo = Number(dividendo) + 4;
+        divisor = divisor + 1;
+        var media = dividendo / divisor;
+        div_resultado.innerHTML = `
+        Sua avaliaçao: <b>${(media).toFixed(2)}</b>
+        `
+    }
+    function nota2(){
+        dividendo = Number(dividendo) + 2;
+        divisor = divisor + 1;
+        var media = dividendo / divisor;
+        div_resultado.innerHTML = `
+        Sua avaliaçao: <b>${(media).toFixed(2)}</b>
+        `
+    }
+    function reset(){
+        dividendo = 0;
+        divisor = 0;
+        div_resultado.innerHTML = ``
+    }
+</script>

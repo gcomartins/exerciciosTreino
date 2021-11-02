@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 5</title>
+</head>
+<body>
+    <h1>Faça qualquer raiz</h1>
+    Radical: <input id="input_radical"><br>
+    Índice: <input id="input_indice"><br>
+    <button onclick="calcular()">Calcular raiz</button><br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var radical = Number(input_radical.value);
+        var indice = Number(input_indice.value);
+        var raiz = radical ** (1/indice);
+
+        div_resultado.innerHTML = `
+        A ${indice} raiz de ${radical} é ${raiz}.
+        `
+    }
+</script>

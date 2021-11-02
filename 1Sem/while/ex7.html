@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex7</title>
+</head>
+<body>
+    Escolha um numero de 20 a 100: <input id="in_num"><br>
+    <button onclick="calcular()">Adoro multiplos de 5</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var contador = 0;
+    var max = in_num.value;
+    function calcular(){   
+    var max = in_num.value;
+        while (contador < max){
+            contador = contador + 5;
+            div_resultado.innerHTML += `${contador} <br>`;
+        }
+    }
+</script>

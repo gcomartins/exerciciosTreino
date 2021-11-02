@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheque Especial</title>
+</head>
+<body>
+    Quanto você possui na conta?:<input id="input_saldo"><br>
+    Quanto você deseja sacar?:<input id="input_saque"><br>
+    <button onclick="calcular()">Analisar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var saldo = Number(input_saldo.value);
+        var saque = Number(input_saque.value);
+        var saldo2 = saldo - saque;
+
+        if(saldo2>=0){
+            div_resultado.innerHTML = `
+            O saldo atual da sua conta corrente é de <i style = "color: blue;">R$${(saldo2).toFixed(2)}</i>
+            `
+        } else {
+            div_resultado.innerHTML = `
+            O saldo atual da sua conta corrente é de <b style = "color: red;">R$${(saldo2).toFixed(2)}</b>
+            `
+        }
+    }
+</script>

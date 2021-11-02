@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV1 - Guilherme Carneir😎</title>
+</head>
+<body>
+    <div style="width: 100%; height: 520px;">
+    <div style="background-color: red; width: 40%; height: 500px; float: left;">
+    <img src="https://abradi.com.br/wp-content/uploads/2020/04/sem-titulo-4.png" style="width: 100%;" alt="">
+
+    Nome da equipe: <input id="input_nome_equipe_r"> <br><br>
+
+    Nome do projeto: <input id="input_nome_projeto_r"> <br><br>
+
+    Duração do projeto (em dias): <input id="input_duracao_projeto_r"> <br><br>
+
+    Custo total do projeto: <input id="input_custo_projeto_r"> <br><br>
+
+    Quantidade de horas do projeto: <input id="input_horas_projeto_r"> <br><br>
+    
+    </div>
+
+    <div style="background-color: blue; width: 40%; height: 500px;float: right">
+    <img src="https://fleeg.com/wp-content/uploads/como-motivar-uma-equipe-de-vendas.png" style="width: 100%" alt="">
+  
+    Nome da equipe: <input id="input_nome_equipe_b"> <br><br>
+
+    Nome do projeto: <input id="input_nome_projeto_b"> <br><br>
+
+    Duração do projeto (em dias): <input id="input_duracao_projeto_b"> <br><br>
+
+    Custo total do projeto: <input id="input_custo_projeto_b"> <br><br>
+
+    Quantidade de horas do projeto: <input id="input_horas_projeto_b"> <br><br>
+  
+    </div>
+    </div>
+    
+    Custo por hora de Mercado:<input id="input_ref_mercado"><br><br>
+    <button onclick="analise()">Analisar projetos</button><br><br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+<script>
+
+
+// FUNÇÃO ANALISE
+function analise(){
+
+    // VARIAVEIS RED
+    var nomeR = input_nome_equipe_r.value;
+    var nomeProjetoR = input_nome_projeto_r.value;
+    var duracaoR = Number(input_duracao_projeto_r.value);
+    var custoR = Number(input_custo_projeto_r.value);
+    var horasR = Number(input_horas_projeto_r.value);
+    var custohoraR = custoR/horasR;
+
+// VARIAVEIS BLUE
+    var nomeB = input_nome_equipe_b.value;
+    var nomeProjetoB = input_nome_projeto_b.value;
+    var duracaoB = Number(input_duracao_projeto_b.value);
+    var custoB = Number(input_custo_projeto_b.value);
+    var horasB = Number(input_horas_projeto_b.value);
+    var custohoraB = custoB/horasB;
+
+// VARIAVEL REF MERCADO
+    var refmercado = Number(input_ref_mercado.value);
+
+    div_resultado.innerHTML = `
+    
+    <h3>Análise de Tempo</h3> O projeto ${nomeProjetoR} foi desenvolvido em <b style="color: red;">${horasR}</b> horas num período de <b style="color:red">${duracaoR}</b> dias, portanto a equipe ${nomeR} trabalhou em média <b style ="color: red">${horasR/duracaoR}</b> horas por dia nesse projeto. <br>
+    O projeto ${nomeProjetoB} foi desenvolvido em <b style ="color: blue">${horasB}</b> horas num período de <b style ="color: blue">${duracaoB}</b> dias, portanto a equipe ${nomeB} trabalhou em média <b style ="color: blue">${horasB/duracaoB}</b> horas por dia nesse projeto. 
+   
+    <h3>Análise de Custos</h3> A equipe ${nomeR} desenvolveu o projeto ${nomeProjetoR} em <b style ="color: red">${horasR}</b> horas a um custo de R$<b style ="color: red">${custoR}</b>, portanto o custo por hora desse projeto é de R$<b style ="color: red">${custohoraR}</b><br>
+    A equipe ${nomeB} desenvolveu o projeto ${nomeProjetoB} em <b style ="color: blue">${horasB}</b> horas a um custo de R$ <b style ="color: blue">${custoB}</b>, portanto o custo por hora desse projeto é de R$<b style ="color: blue">${custohoraB}</b><br>
+    Observe que o custo por hora do projeto ${nomeProjetoR} é <b style ="color: red">${custohoraR/custohoraB*100}</b>% do custo por hora do projeto ${nomeProjetoB}. 
+  
+    <h3>Análise de Referência</h3> O projeto ${nomeProjetoR} com custo por hora de R$<b style ="color: red">${custohoraR}</b> é <b style ="color: red">${custohoraR/refmercado*100}</b>% em relação a referência de mercado R$${refmercado}. <br>
+    O projeto ${nomeProjetoB} com custo por hora de R$<b style ="color: blue">${custohoraB}</b> é <b style ="color: blue">${custohoraB/refmercado*100}</b>% em relação a referência de mercado R$${refmercado}.     
+    `
+
+
+}
+
+</script>

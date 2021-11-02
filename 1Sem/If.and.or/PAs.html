@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 6</title>
+</head>
+<body>
+    <h1>Faça uma progressão geométrica</h1>
+    Primeiro número: <input id="input_a1"><br>
+    Razão da PG: <input id="input_razao"><br>
+    Qual a posição do número que você quer ver?: <input id="input_posicao"><br>
+    <button onclick="calcular()">Calcular PG</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var a1 = Number(input_a1.value);
+        var razao = Number(input_razao.value);
+        var posicao = Number(input_posicao.value);
+        var an = a1 * razao ** (posicao - 1);
+        div_resultado.innerHTML = `
+        O ${posicao}° termo dessa PG é ${an}.
+        `
+    }
+</script>

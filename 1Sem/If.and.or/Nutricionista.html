@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrição Quarentena</title>
+</head>
+<body>
+    <h1>Saiba o que acontecerá com você depois da Quarentena!</h1>
+    Quantos pães você come por dia?: <input id="input_pao"><br>
+    Quantos pacotes de bolacha você come por dia?: <input id="input_bolacha"><br>
+    Quantos copos de achocolatados você bebe por dia?: <input id="input_choc"><br>
+    <button onclick="verificar()">Verificar calorias</button><br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var pao = Number(input_pao.value)*50;
+        var bolacha = Number(input_bolacha.value)*80;
+        var achocolatado = Number(input_choc.value)*70;
+        var total = pao + bolacha + achocolatado;
+        if (total>400) {
+            div_resultado.innerHTML = `
+            Bom, acho que muitos não vão te reconhecer após a quarentena...
+            `
+        } else if (total<200)  {
+            
+                div_resultado.innerHTML = `
+                Parabéns, vai sair em forma da quarentena!
+                `
+        } else if (total >=200) {
+                div_resultado.innerHTML = `
+                Cuidado, está indo mal!
+                `
+        }
+        
+    }
+</script>
