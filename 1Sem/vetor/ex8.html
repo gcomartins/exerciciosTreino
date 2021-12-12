@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor | Ex8</title>
+</head>
+<body>
+    Nota: <input id="in_nota"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    Intervalo: <input id="intervalo1"><input id="intervalo2"><br>
+    <button onclick="rever()">
+        Rever notas
+    </button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    let notas = [];
+    function cadastrar() {
+        let nota = in_nota.value;
+        notas.push(nota);
+        div_resultado.innerHTML = "";
+        for (let index = 0; index < notas.length; index++) {
+            const element = notas[index];
+            div_resultado.innerHTML += `
+            ${element}<br>
+            `
+        }
+    }
+    function rever() {
+        let base = Number(intervalo1.value);
+        let teto = Number(intervalo2.value);
+        let contador = 0;
+        let soma = 0;
+
+        div_resultado.innerHTML = "";
+        for (let index = 0; index < notas.length; index++) {
+            const element = notas[index];
+            if (element >= base && element <= teto) {
+                div_resultado.innerHTML += `
+                ${element}<br>
+                `
+                contador++;
+
+                soma += Number(element);
+            }
+        }
+        console.log(notas);
+        console.log(soma);
+        console.log(contador);
+
+        div_resultado.innerHTML += `
+        <br> Média das notas: ${soma/contador}
+        `
+    }
+</script>
+<style>
+    #intervalo1 {
+        width: 25px;
+    }
+    #intervalo2 {
+        width: 25px;
+    }
+</style>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor| Avançado</title>
+</head>
+
+<body>
+    Valor do deposito: <input id="in_deposito"><br>
+    Dia do deposito: <input id="in_dia" type="date"><br>
+    <button onclick="registrar()">
+        Efetuar depósito
+    </button>
+    <button onclick="gerarExtrato()">
+        Extrato bancário
+    </button><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+    let entradas = [];
+    let dataEntrada = [];
+    let saidas = [];
+    let dataSaidas = [];
+    let saidaTotal = 0;
+    function registrar() {
+        valorVar = Number(in_deposito.value);
+        dataEntradaVar = in_dia.value;
+
+        entradas.push(valorVar);
+        dataEntrada.push(dataEntradaVar);
+    }
+    function gerarExtrato() {
+        div_resultado.innerHTML = "<h3>Entradas:</h3>";
+        let mostrarValor = 0;
+        for (let i = 0; i < entradas.length; i++) {
+            const entradaE = entradas[i];
+            const dataEntradaE = dataEntrada[i];
+            div_resultado.innerHTML += `
+            Foi depositado <b>R$${entradaE}</b> no dia <b>${dataEntradaE}</b>. <br>
+            `;
+        }
+        div_resultado.innerHTML += `
+        <h3>Saídas:</h3>
+        `
+        for (let i = 0; i < dataEntrada.length; i++) {
+            const dataE = dataEntrada[i];
+            
+            for (let i2 = 0; i2 < dataEntrada.length; i2++) {
+                const dataE2 = dataEntrada[i2];
+                const entradaE2 = entradas[i2];
+                if (dataE == dataE2) {
+                    mostrarValor += entradaE2;
+                }
+            }
+            if (dataSaidas[dataSaidas.indexOf(dataE)] != dataE) {
+                dataSaidas.push(dataE);
+                saidas.push(mostrarValor);
+            }
+            mostrarValor = 0;
+        }
+        for (let i = 0; i < saidas.length; i++) {
+            const saidaE = saidas[i];
+            const dataE = dataSaidas[i];
+
+            div_resultado.innerHTML += `
+            Dia <b>${dataE}</b> - Foi depositado <b>${saidaE}</b>. <br>
+            `   
+        }
+        for (let i = 0; i < saidas.length; i++) {
+            const saida = saidas[i];
+            saidaTotal += saida;
+            
+        }
+
+        div_resultado.innerHTML += `
+        Total: <b>R$${saidaTotal}</b>
+        `
+        saidaTotal = 0;
+        dataSaidas = [];
+        saidas = [];
+        // for (let i = 0; i < dataEntrada.length; i++) {
+        //     const valorE = entradas[i];
+        //     const dataEntradaE = dataEntrada[i];
+        //     for (let i2 = 0; i2 < entradas.length; i2++) {
+        //         const valorE2 = entradas[i2];
+        //         const dataEntradaE2 = dataEntrada[i2];
+
+        //         if (dataEntradaE == dataEntradaE2) {
+        //             mostrarValor += valorE2;
+        //         }
+        //     }
+        //     if (i == (dataEntrada.length - 1)) {
+        //         div_resultado.innerHTML += `
+        //                 Dia <b>${dataEntradaE}</b> - depósitos <b>R$${mostrarValor}</b><br>
+        //                 `
+        //     }
+        //     mostrarValor = 0;
+        // }
+
+
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor | Ex 2</title>
+</head>
+<body>
+    Destino: <input id="input_destino">
+    <button onclick="cadastrar()">Cadastrar viagem</button> <br>
+    Viagem: <input id="tbt">
+    <button onclick="relembrar()">Relembrar viagem</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var destinos = [];
+    function cadastrar(){
+        var destino = input_destino.value;
+        destinos.push(destino);
+        console.log("Destino cadastrado com sucesso!")
+    }
+    function relembrar(){
+        if (tbt.value <= destinos.length){
+            div_resultado.innerHTML = `
+            ${destinos[tbt.value - 1]}
+            `;
+        } else {
+            div_resultado.innerHTML = `
+            Você ainda não fez a ${tbt.value}° viagem
+            `
+        }
+    }
+</script>

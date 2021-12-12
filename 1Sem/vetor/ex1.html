@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor | Ex 1</title>
+
+    <style>
+        span {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    Cadastre um filme: <input id="input_filme"><br>
+    <button onclick="cadastrar_filme()">Cadastrar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var lista_filmes = [];
+    function cadastrar_filme(){
+        var filme = input_filme.value;
+        lista_filmes.push(filme);
+
+        div_resultado.innerHTML = "";
+
+        for(contador = 0; contador < lista_filmes.length; contador++){
+            if (contador == 0){
+                div_resultado.innerHTML = `
+                <span style= "color: red">Seu filme favorito: ${lista_filmes[0]}</span><br>
+                <span style= "color: blue">Seu 2° filme favorito ainda não foi definido!</span><br>
+                <span style= "color: red">Seu 3° filme favorito ainda não foi definido!</span><br>`    
+            } else if (contador == 1){
+                div_resultado.innerHTML = `
+                <span style= "color: red"> Seu filme favorito: ${lista_filmes[0]} </span><br>
+                <span style= "color: blue">Seu 2° filme favorito: ${lista_filmes[1]}</span><br>
+                <span style= "color: red">Seu 3° filme favorito ainda não foi definido!</span><br>`
+            } else if (contador == 2) {
+                div_resultado.innerHTML = `
+                <span style= "color: red"> Seu filme favorito: ${lista_filmes[0]} </span><br>
+                <span style= "color: blue">Seu 2° filme favorito: ${lista_filmes[1]}</span><br>
+                <span style= "color: red">Seu 3° filme favorito: ${lista_filmes[2]}</span><br>`
+            }else {
+                if (contador % 2 == 1){
+                    div_resultado.innerHTML += `
+                    <span style="color: blue">Seu ${contador + 1}° filme favorito: ${lista_filmes[contador]}</span><br>
+                    `
+                }else {
+                    div_resultado.innerHTML += `
+                    <span style="color: red">Seu ${contador + 1}° filme favorito: ${lista_filmes[contador]}</span><br>
+                    `
+                }
+            }
+        }
+        div_resultado.innerHTML += `
+        <b>Quantidade de filmes cadastrados: ${lista_filmes.length}
+        `
+    }
+</script>

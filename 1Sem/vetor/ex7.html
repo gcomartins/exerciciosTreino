@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor | Ex7</title>
+</head>
+<body>
+    Cadastrar Aluno: <input id="nomeAlunoC"><br>
+    Pesquisar Aluno: <input id="nomeAlunoP"><br>
+    <button onclick="cadastrar()">
+        Cadastrar
+    </button>
+    <button onclick="pesquisar()">
+        Pesquisar
+    </button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    let alunos = [];
+    function cadastrar(){
+        let aluno = nomeAlunoC.value;
+        alunos.push(aluno);
+        div_resultado.innerHTML = "";
+
+        for (let index = 0; index < alunos.length; index++) {
+            const aluno = alunos[index];
+            div_resultado.innerHTML += `
+            ${aluno}<br>
+            `
+        }
+    }
+    function pesquisar(){
+        let aluno = nomeAlunoP.value;
+        let contador = 0;
+
+        for (let index = 0; index < alunos.length; index++) {
+            const element = alunos[index];
+            if (element == aluno) {
+                contador++
+            }
+        }
+        alert(`O Aluno foi cadastrado ${contador} vezes!`)
+    }
+</script>

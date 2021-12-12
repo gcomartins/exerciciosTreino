@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor | Ex 6</title>
+</head>
+<body>
+    Cadastrar novo aluno: <input id="in_cadastro"> <button onclick="cadastrar()">Cadastrar aluno</button><br>
+    Pesquisar Aluno: <input id="in_pesquisa"> <button onclick="pesquisar()">Pesquisar aluno</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var alunos = [];
+    function cadastrar(){
+        if (alunos.map(l => l.value).indexOf(aluno) == -1){
+            alunos.push(aluno);
+        }else {
+            alert("Esse aluno já foi cadastrado!")
+        }
+    }
+
+    function pesquisar(){
+
+    }
+</script>

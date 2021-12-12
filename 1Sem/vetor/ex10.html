@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor | Ex10</title>
+</head>
+<body>
+    Número: <input id="input_numero"><br>
+    <button onclick="analisarHistorico()">
+        Analisar Histórico
+    </button><br>
+    <div id="div_lista_numeros"></div>
+</body>
+</html>
+<script>
+    let lista_numeros = [];
+    function analisarHistorico() {
+        div_lista_numeros.innerHTML = "";
+        let numero_digitado = Number(input_numero.value);
+        lista_numeros.push(numero_digitado);
+        let menor_numero = lista_numeros[0];
+        let maior_numero = lista_numeros[0];
+        console.log(lista_numeros);
+        
+        for (let index = 0; index < lista_numeros.length; index++) {
+            const element = lista_numeros[index];
+            div_lista_numeros.innerHTML += `${index + 1}° número: ${element}<br>`;
+
+            if (element <= menor_numero) {
+                menor_numero = element;
+            }
+            if (element >= maior_numero) {
+                maior_numero = element;
+            }
+        }
+        console.log(`Maior número: ${maior_numero}`);
+        console.log(`Menor número: ${menor_numero}`);
+
+        div_lista_numeros.innerHTML += `
+        <br>
+        Maior número: ${maior_numero}<br>
+        Menor número: ${menor_numero}
+        `
+    }
+</script>
